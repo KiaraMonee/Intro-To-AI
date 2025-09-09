@@ -1,0 +1,14 @@
+Kiara Mikel ; September 9, 2025 ; Assignment 2
+
+cars <- mtcars
+
+cor(cars$mpg, cars$gear)
+
+training_data <- cars[1:16,]
+test_data <- cars[17:32,]
+
+regression_result <- lm(mpg ~ gear, data=training_data)
+
+prediction_result <- predict(regression_result, test_data)
+
+actual_prediction_values <- data.frame(cbind(actual=training_data$mpg,predicteds=prediction_result))
